@@ -9,8 +9,9 @@ contract("save and retrieve data", async accounts => {
         console.log("Random bytes32: " + bytes32);
         await api_instance.set_data(bytes32,bytes32);
         var get_data = await api_instance.get_data(accounts[0]);
-        console.log("Returned Data: " + JSON.stringify(get_data));
+        console.log("Returned Data: " + get_data[0]);
 
-        assert.equal(JSON.stringify(get_data), '{"0":"' + bytes32 + '","1":"' + bytes32 + '"}', "Return Value should equal value set.");
+        assert.equal(get_data[0], bytes32, "Return Value should equal value set.");
+        assert.equal(get_data[1], bytes32, "Return Value should equal value set.");
     });
 });

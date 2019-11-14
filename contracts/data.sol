@@ -11,6 +11,10 @@ contract data {
     owner = msg.sender;
   }
 
+  function set_owner(address _owner) public only_by(owner) {
+    owner = _owner;
+  }
+
   function set_api_address(address _api_address) public only_by(owner) {
     api_address = _api_address;
   }

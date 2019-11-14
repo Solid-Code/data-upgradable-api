@@ -9,6 +9,10 @@ contract api {
     data_address = _data_address;
   }
 
+  function set_owner(address _owner) public only_by(owner) {
+    owner = _owner;
+  }
+
   function set_data_address(address _data_address) public only_by(owner) {
     data_address = _data_address;
   }
